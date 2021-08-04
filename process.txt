@@ -72,3 +72,5 @@ serializer = ArticleSerializer(Article.objects.all(), many=True)
 >>>
 
 ------Modal serializer-----
+
+https://www.youtube.com/watch?v=jv8G4kfjn4w&list=PLPip5lOh2Z5Cms1C6g0GHgHiaXnXCmYm1&index=2
