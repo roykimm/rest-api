@@ -1,0 +1,74 @@
+ls
+python -m venv venv
+cd venv
+ls
+cd Scripts
+ls
+activate
+cd ..
+cd ,,
+pip install django
+pip install djangorestframework
+pip list
+pip install markdown
+pip install django-filter
+ls
+cd ..
+ls
+django-admin startproject Myproject
+django-admin MyProject
+django-admin startproject MyProject
+ls
+cd MyProject
+python manage.py migrate
+python manage.py runserver
+python manage.py startapp api_basic
+python manage.py createsuperuser
+python manage.py runserver
+history
+doskey /history
+
+serializer!!!!
+
+------Normal serializer-----
+
+now exiting InteractiveConsole...
+
+(venv) C:\Users\royki\OneDrive\바탕 화면\django\rest-api\MyProject>python manage.py shell
+Python 3.9.2 (tags/v3.9.2:1a79785, Feb 19 2021, 13:30:23) [MSC 
+v.1928 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> import api_basic.models import Article
+  File "<console>", line 1
+    import api_basic.models import Article
+                            ^
+SyntaxError: invalid syntax
+>>> from api_basic.models import Article   
+>>> from api_basic.serializers import ArticleSerializer
+>>> from rest_framework.renderers impor JSONRenderer
+  File "<console>", line 1
+    from rest_framework.renderers impor JSONRenderer
+                                  ^
+SyntaxError: invalid syntax
+>>> from rest_framework.renderers import JSONRenderer 
+>>> from rest_framework.parsers import JSONParser
+
+ a = Article(title="article TItle" , author="gobella", email="gobella@gmail.com")
+>>> a.save()
+
+>>> a.save()
+>>> serializer = ArticleSerializer(a)
+>>> serializer.data
+{'title': 'title', 'author': 'goroy', 'email': 'goroy@gmail.com', 'date': '2021-07-25T07:51:07.714453Z'}
+>>> content = JSONRenderer().render(serializer.data)
+>>> content
+b'{"title":"title","author":"goroy","email":"goroy@gmail.com","date":"2021-07-25T07:51:07.714453Z"}'
+>>>
+
+serializer = ArticleSerializer(Article.objects.all(), many=True)
+>>> serializer.data
+[OrderedDict([('title', 'article TItle'), ('author', 'gobella'), ('email', 'gobella@gmail.com'), ('date', '2021-07-25T07:49:56.924218Z')]), OrderedDict([('title', 'title'), ('author', 'goroy'), ('email', 'goroy@gmail.com'), ('date', '2021-07-25T07:51:07.714453Z')])]
+>>>
+
+------Modal serializer-----
